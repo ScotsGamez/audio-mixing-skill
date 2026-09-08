@@ -79,6 +79,36 @@ PROFILES = {
             {"freq": 10000.0, "gain": 1.0, "q": 0.8, "type": "High-shelf"},
         ],
         "maximizer": {"ceiling": -0.5, "release": 100.0, "threshold": 0.0}
+    },
+    "desktop_speakers_4inch": {
+        "description": "3\"-4\" Desktop Speakers: 55Hz high-pass protection, 200Hz desk reflection cut, vocal lift",
+        "input_gain": -2.0,
+        "bands": [
+            {"freq": 32.0, "gain": -12.0, "q": 1.0, "type": "High-pass"},
+            {"freq": 55.0, "gain": -4.0, "q": 1.0, "type": "High-pass"},
+            {"freq": 90.0, "gain": 2.5, "q": 1.4, "type": "Bell"},
+            {"freq": 200.0, "gain": -3.0, "q": 2.0, "type": "Bell"},
+            {"freq": 500.0, "gain": 0.0, "q": 1.4, "type": "Bell"},
+            {"freq": 1000.0, "gain": 1.0, "q": 1.4, "type": "Bell"},
+            {"freq": 2500.0, "gain": 2.0, "q": 1.8, "type": "Bell"},
+            {"freq": 10000.0, "gain": 1.5, "q": 0.8, "type": "High-shelf"},
+        ],
+        "maximizer": {"ceiling": -0.5, "release": 80.0, "threshold": 0.0}
+    },
+    "nearfield_monitors_boundary": {
+        "description": "5\"-8\" Monitors Against Wall: -3.5dB half-space boundary cut below 100Hz, neutral studio balance",
+        "input_gain": 0.0,
+        "bands": [
+            {"freq": 32.0, "gain": 0.0, "q": 1.0, "type": "Bell"},
+            {"freq": 64.0, "gain": -3.0, "q": 1.0, "type": "Low-shelf"},
+            {"freq": 100.0, "gain": -3.5, "q": 0.8, "type": "Low-shelf"},
+            {"freq": 180.0, "gain": -2.0, "q": 2.0, "type": "Bell"},
+            {"freq": 500.0, "gain": 0.0, "q": 1.4, "type": "Bell"},
+            {"freq": 1000.0, "gain": 0.0, "q": 1.4, "type": "Bell"},
+            {"freq": 3000.0, "gain": 0.5, "q": 1.4, "type": "Bell"},
+            {"freq": 10000.0, "gain": 0.0, "q": 0.7, "type": "High-shelf"},
+        ],
+        "maximizer": {"ceiling": -0.5, "release": 100.0, "threshold": 0.0}
     }
 }
 

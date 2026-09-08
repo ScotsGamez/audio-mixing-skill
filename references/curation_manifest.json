@@ -39,6 +39,12 @@
       "path": "references/use_case_targets.md",
       "weight": "high"
     },
+    "speaker_size_and_monitoring": {
+      "enabled": true,
+      "description": "Speaker woofer sizing, nearfield acoustics, boundary loading (Genelec, Mike Senior, ITU-R)",
+      "path": "references/speaker_size_and_monitoring.md",
+      "weight": "critical"
+    },
     "user_preferences": {
       "enabled": true,
       "description": "User's personal overrides, blacklists, and manual listening feedback",

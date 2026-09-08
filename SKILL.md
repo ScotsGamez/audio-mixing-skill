@@ -23,6 +23,7 @@ Before providing recommendations or generating DSP profiles:
 2. Check [curation_manifest.json](./references/curation_manifest.json) to verify which source materials are active.
 3. Incorporate verified principles from:
    - [curated_pdf_guides.md](./references/community_notes/curated_pdf_guides.md) (iZotope, Owsinski, Izhaki, Vitek)
+   - [speaker_size_and_monitoring.md](./references/speaker_size_and_monitoring.md) (Genelec, Mike Senior, ITU-R woofer physics & boundary loading)
    - [reddit_audiophile_insights.md](./references/community_notes/reddit_audiophile_insights.md) (/r/headphones, /r/mixingmastering, /r/oratory1990)
 
 ---
