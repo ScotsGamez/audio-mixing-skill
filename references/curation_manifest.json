@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "1.0.0",
+  "description": "Manual training data and reference source curation manifest for the audio-mixing AI skill.",
+  "active_sources": {
+    "curated_pdf_guides": {
+      "enabled": true,
+      "description": "Textbook and open PDF manuals (iZotope, Bobby Owsinski, Roey Izhaki, Tim Vitek)",
+      "path": "references/community_notes/curated_pdf_guides.md",
+      "weight": "high"
+    },
+    "reddit_audiophile_insights": {
+      "enabled": true,
+      "description": "Community consensus from /r/headphones, /r/mixingmastering, /r/oratory1990",
+      "path": "references/community_notes/reddit_audiophile_insights.md",
+      "weight": "high"
+    },
+    "mastering_masters": {
+      "enabled": true,
+      "description": "Bob Katz K-System, Fletcher-Munson curves, EBU R128 LUFS standards",
+      "path": "references/mastering_masters.md",
+      "weight": "critical"
+    },
+    "hardware_profiles": {
+      "enabled": true,
+      "description": "Transducer displacement physics, 40mm vs 50mm excursion, enclosure acoustics",
+      "path": "references/hardware_profiles.md",
+      "weight": "critical"
+    },
+    "audiophile_curves": {
+      "enabled": true,
+      "description": "Harman Target 2019, Oratory1990 measurements, Rtings data",
+      "path": "references/audiophile_curves.md",
+      "weight": "high"
+    },
+    "use_case_targets": {
+      "enabled": true,
+      "description": "Gaming FPS spatial clarity, Cinema dialogue intelligibility, Music punch",
+      "path": "references/use_case_targets.md",
+      "weight": "high"
+    },
+    "user_preferences": {
+      "enabled": true,
+      "description": "User's personal overrides, blacklists, and manual listening feedback",
+      "path": "references/user_preferences.md",
+      "weight": "supreme_override"
+    }
+  },
+  "filtering_rules": {
+    "strict_headroom_enforcement": true,
+    "reject_uncalibrated_v_shape": true,
+    "allow_experimental_dsp": false
+  }
+}

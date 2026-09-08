@@ -16,6 +16,15 @@ and Linux DSP software (EasyEffects on PipeWire).
 All iteration, reference datasets, presets, and audiophile community findings are version-controlled in this
 repository and synced to GitHub.
 
+## 0. Manual Curation & Source Manifest
+
+Before providing recommendations or generating DSP profiles:
+1. Consult [user_preferences.md](./references/user_preferences.md) for user-defined sound signatures, gear specifics, and hard blacklists (which take absolute priority).
+2. Check [curation_manifest.json](./references/curation_manifest.json) to verify which source materials are active.
+3. Incorporate verified principles from:
+   - [curated_pdf_guides.md](./references/community_notes/curated_pdf_guides.md) (iZotope, Owsinski, Izhaki, Vitek)
+   - [reddit_audiophile_insights.md](./references/community_notes/reddit_audiophile_insights.md) (/r/headphones, /r/mixingmastering, /r/oratory1990)
+
 ---
 
 ## 1. Interactive Intake & Diagnostic Workflow
