@@ -45,11 +45,16 @@ audio-mixing/
 │   ├── generate_preset.py            # Automated preset compiler and EasyEffects installer
 │   ├── fetch_autoeq.py               # AutoEq database search, parser, and installer
 │   └── check_loudness.py             # FFmpeg EBU R128 loudness & True Peak scanner
+├── skills/
+│   └── easyeffects/                  # Dedicated EasyEffects & PipeWire DSP Skill
+│       ├── SKILL.md                  # EasyEffects runbook and diagnostics
+│       ├── scripts/ee_manager.py     # Status, health, and bypass CLI tool
+│       └── references/easyeffects_manual.md # Plugin parameter reference
 └── presets/                          # Version-controlled reference presets
-    ├── Cloud Alpha - Pro Audiophile Master.json
-    ├── Gaming - FPS Spatial Clarity.json
-    ├── Cinema - Dialogue & Dynamic Control.json
+    ├── Cloud Alpha S - Clean Bass & Crystal Clarity.json
     ├── Audiophile - Harman 2019 Reference.json
+    ├── Cinema - Dialogue & Dynamic Control.json
+    ├── Gaming - FPS Spatial Clarity.json
     ├── Speakers - 4 Inch Desktop Calibration.json
     ├── Speakers - Nearfield Wall Boundary Control.json
     └── community/                    # Upstream community presets (JackHack96)
@@ -59,10 +64,15 @@ audio-mixing/
 
 ## 🔗 Antigravity Skill Integration
 
-This directory is symlinked into your global agent skills:
-```bash
-ln -s ~/Projects/audio-mixing ~/.agents/skills/audio-mixing
-```
+This repository ships **two built-in AI Agent skills** that are mounted into your global agent environment:
+1. **`audio-mixing`**: Pro-audio mastering, transducer physics, acoustic calibration, and sound profiling.
+   ```bash
+   ln -s ~/Projects/audio-mixing ~/.agents/skills/audio-mixing
+   ```
+2. **`easyeffects`**: Dedicated Linux DSP daemon management, WirePlumber/PipeWire audio routing, and in-place preset maintenance.
+   ```bash
+   ln -s ~/Projects/audio-mixing/skills/easyeffects ~/.agents/skills/easyeffects
+   ```
 Antigravity automatically discovers the `audio-mixing` skill. Whenever you ask your AI assistant to calibrate sound, mix a track, or configure EasyEffects, the assistant activates this skill and follows the procedures in `SKILL.md`.
 
 ---
