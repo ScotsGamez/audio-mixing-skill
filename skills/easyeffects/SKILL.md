@@ -71,8 +71,11 @@ All EasyEffects configurations reside under standard XDG paths:
 - **Mode**: Use `RLC (BT)` or `IIR` for low-latency, phase-accurate performance.
 
 ### B. Maximizer / Brickwall Limiter (`maximizer`)
+- **Required Dependency**: **`zam-plugins-lv2`** (`urn:zamaudio:ZaMaximX2`).
+  - *Symptom if missing*: EasyEffects logs `Could not find the plugin: urn:zamaudio:ZaMaximX2` and the Maximizer silently fails to process audio.
+  - *Install with*: `omarchy pkg add zam-plugins-lv2` (or `sudo pacman -S zam-plugins-lv2`).
 - Mandatory safety shield at the end of the DSP chain.
-- Catches positive EQ overshoot and prevents analog DAC clipping.
+- Catches positive EQ overshoot, prevents analog DAC clipping, and transparently maximizes loudness.
 - **Recommended Settings**:
   - `ceiling`: `-0.1` to `-0.5` dBTP
   - `threshold`: `-1.0` to `-2.0` dB

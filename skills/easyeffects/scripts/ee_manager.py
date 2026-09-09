@@ -16,10 +16,10 @@ PRESET_DIR = Path.home() / ".local" / "share" / "easyeffects" / "output"
 
 def run_cmd(cmd: list) -> str:
     try:
-        res = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, check=True)
+        res = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         return res.stdout.strip()
     except Exception as e:
-        return f"Error: {e}"
+        return ""
 
 
 def check_status():
@@ -48,7 +48,22 @@ def check_status():
     else:
         print(f"• DSP State Code:        {bypass_code}")
 
-    # 4. Check Installed Presets in Output Directory
+    # 4. Check Plugin Dependencies
+    print("\n--- LV2 Plugin Dependencies ---")
+    deps = {
+        "zam-plugins-lv2": "Maximizer (ZaMaximX2)",
+        "lsp-plugins-lv2": "Equalizer, Limiter, Compressor",
+        "calf": "Bass Enhancer, Exciter",
+    }
+    for pkg, feature in deps.items():
+        is_installed = subprocess.run(["pacman", "-Q", pkg], stdout=subprocess.PIPE, stderr=subprocess.PIPE).returncode == 0
+        if is_installed:
+            print(f"  ✓ {pkg:18s}: INSTALLED (Powers {feature})")
+        else:
+            print(f"  ❌ {pkg:18s}: MISSING! (Required for {feature})")
+            print(f"     -> Install with: omarchy pkg add {pkg} (or: sudo pacman -S {pkg})")
+
+    # 5. Check Installed Presets in Output Directory
     if PRESET_DIR.exists():
         presets = sorted([f.stem for f in PRESET_DIR.glob("*.json")])
         print(f"\n--- Installed Presets ({len(presets)} total) ---")
