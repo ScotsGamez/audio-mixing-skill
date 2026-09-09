@@ -20,6 +20,9 @@ you define here take the highest priority over all other references and default 
 2. **No Blind V-Shape Boosts**: Avoid generic consumer "smile" curves that boost mid-bass (100–200 Hz) and treble while hollowing out mids.
 3. **No Stereo Widening on Sub-Bass**: Keep all low-end (<120 Hz) phase-correlated and centered.
 4. **No Artificial 7.1 Virtual Surround**: Avoid phase-distorting virtual surround sound plugins for critical music listening.
+5. **No Crossfeed**: Do not use crossfeed plugin; on closed-back Cloud Alpha headphones it smears stereo separation and creates a muffled, boxy midrange.
+6. **No Heavy Harmonic Excitation on Full Mix**: Keep the signal path clean (`equalizer + maximizer`) to preserve pristine vocal clarity without artificial saturation mud.
+7. **Maintain Upper Presence**: Ensure 4 kHz (+6 dB) and 8 kHz (+3 dB) are preserved so heavy sub-bass never veils vocals or instruments.
 
 ---
 
