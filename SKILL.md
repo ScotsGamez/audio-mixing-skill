@@ -25,6 +25,14 @@ Before providing recommendations or generating DSP profiles:
    - [curated_pdf_guides.md](./references/community_notes/curated_pdf_guides.md) (iZotope, Owsinski, Izhaki, Vitek)
    - [speaker_size_and_monitoring.md](./references/speaker_size_and_monitoring.md) (Genelec, Mike Senior, ITU-R woofer physics & boundary loading)
    - [reddit_audiophile_insights.md](./references/community_notes/reddit_audiophile_insights.md) (/r/headphones, /r/mixingmastering, /r/oratory1990)
+   - [easyeffects_community_presets.md](./references/community_notes/easyeffects_community_presets.md) (JackHack96 curated presets)
+
+### Mandatory Transparency & Prior Notice Protocol
+Before executing any action that affects the system, reads local audio files, or touches external networks, the agent **MUST inform the user in advance**:
+1. **Network & AutoEq Lookups**: Tell the user before querying GitHub/AutoEq: *"I am about to search the AutoEq database for [Model Name]..."*
+2. **Preset Preview Before Writing**: Always print a clear preview of the proposed DSP settings (Preamp gain, frequency bands, gain values, Q factors, safety limiter) *before* installing presets into `~/.local/share/easyeffects/output/`.
+3. **Live Playback Switching**: Inform the user before running `easyeffects -l <name>` that active playback will be switched.
+4. **Audio File Inspection**: State which file is being scanned and why before running FFmpeg EBU R128 loudness analysis.
 
 ---
 
@@ -89,16 +97,24 @@ EasyEffects output presets are stored in JSON format inside:
 4. **Compressor** (Optional for TV/Movies/Gaming): Tames dynamic spikes and brings up low-level dialogue.
 5. **Maximizer / Limiter**: Brickwall ceiling at -0.5 dBTP to prevent DAC saturation.
 
-### Applying Presets:
-To generate and load presets automatically, use the bundled python script:
-```bash
-python3 scripts/generate_preset.py --name "Target Preset" --curve gaming_clarity
-easyeffects -l "Target Preset"
-```
-Or check existing presets:
-```bash
-easyeffects -p
-```
+### Bundled Automation Helpers:
+1. **Calibrated Preset Generator**:
+   ```bash
+   python3 scripts/generate_preset.py --profile cloud_alpha_master --name "My Preset" --install
+   ```
+2. **AutoEq Importer (with preview notice)**:
+   ```bash
+   python3 scripts/fetch_autoeq.py --model "HyperX Cloud Alpha" --install --confirm
+   ```
+3. **FFmpeg EBU R128 Loudness Scanner**:
+   ```bash
+   python3 scripts/check_loudness.py /path/to/audio_file.wav
+   ```
+4. **Switching & Inspecting Presets**:
+   ```bash
+   easyeffects -p                     # List presets
+   easyeffects -l "My Preset"         # Activate preset
+   ```
 
 ---
 

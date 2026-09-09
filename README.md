@@ -14,6 +14,9 @@ This repository is structured both as an **Antigravity AI Agent Skill** (`SKILL.
   - **Music**: Harman Target 2019 reference, EDM sub-bass punch, vocal warmth, acoustic realism.
   - **Competitive Gaming**: Suppresses explosion rumble (<60Hz), clarifies directional footstep clicks (1.2–3.5kHz).
   - **Cinema & TV**: Vocal intelligibility enhancement and dynamic range compression for comfortable late-night viewing.
+- **User Transparency Protocol**: Mandatory advance notifications and previews before querying external databases or modifying system presets.
+- **AutoEq Importer**: Ingests verified measurement curves (Oratory1990, Crinacle) directly into calibrated EasyEffects presets.
+- **Loudness Compliance Scanner**: Scans audio tracks with FFmpeg EBU R128 to evaluate LUFS and True Peak compliance against Spotify, Apple Music, and broadcast standards.
 - **Linux DSP Integration**: Generates, installs, and activates calibrated JSON presets directly inside EasyEffects (`~/.local/share/easyeffects/output/`).
 
 ---
@@ -26,18 +29,30 @@ audio-mixing/
 ├── README.md                         # Project documentation and GitHub setup guide
 ├── .gitignore
 ├── references/                       # The training knowledge base
+│   ├── curation_manifest.json        # Manual source toggle and priority weighting
+│   ├── user_preferences.md           # Supreme user overrides, blacklists, listening log
 │   ├── mastering_masters.md          # Bob Katz, Fletcher-Munson, LUFS, gain staging
+│   ├── speaker_size_and_monitoring.md# Woofer physics, boundary loading, Auratone technique
 │   ├── hardware_profiles.md          # 40mm vs 50mm vs planar, open vs closed, monitors
 │   ├── use_case_targets.md           # EQ curves for Gaming, Movies, Music, Studio
 │   ├── audiophile_curves.md          # Oratory1990, Harman 2019, Rtings, Cloud Alpha
-│   └── easyeffects_dsp_pipeline.md   # EasyEffects signal flow and CLI automation
+│   ├── easyeffects_dsp_pipeline.md   # EasyEffects signal flow and CLI automation
+│   └── community_notes/              # Curated external books, Reddit & forum notes
+│       ├── curated_pdf_guides.md     # iZotope, Bobby Owsinski, Roey Izhaki, Tim Vitek
+│       ├── reddit_audiophile_insights.md # /r/headphones, /r/mixingmastering insights
+│       └── easyeffects_community_presets.md # JackHack96 curated preset guides
 ├── scripts/
-│   └── generate_preset.py            # Automated preset compiler and EasyEffects installer
+│   ├── generate_preset.py            # Automated preset compiler and EasyEffects installer
+│   ├── fetch_autoeq.py               # AutoEq database search, parser, and installer
+│   └── check_loudness.py             # FFmpeg EBU R128 loudness & True Peak scanner
 └── presets/                          # Version-controlled reference presets
     ├── Cloud Alpha - Pro Audiophile Master.json
     ├── Gaming - FPS Spatial Clarity.json
     ├── Cinema - Dialogue & Dynamic Control.json
-    └── Audiophile - Harman 2019 Reference.json
+    ├── Audiophile - Harman 2019 Reference.json
+    ├── Speakers - 4 Inch Desktop Calibration.json
+    ├── Speakers - Nearfield Wall Boundary Control.json
+    └── community/                    # Upstream community presets (JackHack96)
 ```
 
 ---

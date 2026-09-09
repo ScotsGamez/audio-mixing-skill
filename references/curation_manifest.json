@@ -45,6 +45,12 @@
       "path": "references/speaker_size_and_monitoring.md",
       "weight": "critical"
     },
+    "easyeffects_community_presets": {
+      "enabled": true,
+      "description": "Curated community presets from JackHack96 (Loudness+Autogain, Advanced Auto Gain)",
+      "path": "references/community_notes/easyeffects_community_presets.md",
+      "weight": "medium"
+    },
     "user_preferences": {
       "enabled": true,
       "description": "User's personal overrides, blacklists, and manual listening feedback",
