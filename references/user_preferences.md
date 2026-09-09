@@ -23,6 +23,7 @@ you define here take the highest priority over all other references and default 
 5. **No Crossfeed**: Do not use crossfeed plugin; on closed-back Cloud Alpha headphones it smears stereo separation and creates a muffled, boxy midrange.
 6. **No Heavy Harmonic Excitation on Full Mix**: Keep the signal path clean (`equalizer + maximizer`) to preserve pristine vocal clarity without artificial saturation mud.
 7. **Maintain Upper Presence**: Ensure 4 kHz (+6 dB) and 8 kHz (+3 dB) are preserved so heavy sub-bass never veils vocals or instruments.
+8. **In-Place Preset Updates Only (No Preset Sprawl)**: When adjusting or fine-tuning sound profiles, NEVER create a new uniquely-named preset file. Always update and overwrite the single active custom preset (`Cloud Alpha S - Clean Bass & Crystal Clarity.json`) in-place. The user's EasyEffects directory must only contain this active preset and the default program presets.
 
 ---
 

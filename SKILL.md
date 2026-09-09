@@ -33,6 +33,7 @@ Before executing any action that affects the system, reads local audio files, or
 2. **Preset Preview Before Writing**: Always print a clear preview of the proposed DSP settings (Preamp gain, frequency bands, gain values, Q factors, safety limiter) *before* installing presets into `~/.local/share/easyeffects/output/`.
 3. **Live Playback Switching**: Inform the user before running `easyeffects -l <name>` that active playback will be switched.
 4. **Audio File Inspection**: State which file is being scanned and why before running FFmpeg EBU R128 loudness analysis.
+5. **In-Place Updates Only (No Preset Sprawl)**: When adjusting or fine-tuning sound profiles, NEVER generate a new uniquely named preset file. Overwrite the user's active preset (`Cloud Alpha S - Clean Bass & Crystal Clarity.json`) in-place so EasyEffects only ever contains this single active preset and the default program presets.
 
 ---
 
