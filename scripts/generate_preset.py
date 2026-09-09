@@ -113,22 +113,37 @@ PROFILES = {
 }
 
 
-def build_preset_json(profile_data):
-    """Builds a complete EasyEffects output preset dictionary."""
+def clamp_gain_to_safe_limits(freq: float, gain: float, driver_size_mm: int = 50) -> float:
+    """
+    Enforces physical transducer ceilings to prevent voice-coil distortion and earcup blaring.
+    Exceeding +8.0 dB at 31-35 Hz causes acoustic blare on 50mm dynamic drivers.
+    """
+    if freq <= 35.0:
+        max_gain = 5.5 if driver_size_mm <= 40 else (8.0 if driver_size_mm <= 50 else 9.5)
+        if gain > max_gain:
+            print(f"⚠️  [Safety Clamp]: {freq:.0f} Hz boost of {gain:+.1f} dB exceeds physical safe limit ({max_gain:+.1f} dB) for {driver_size_mm}mm drivers. Clamped to {max_gain:+.1f} dB to prevent blaring.")
+            return max_gain
+    elif 35.0 < freq <= 80.0:
+        max_gain = 7.5
+        if gain > max_gain:
+            return max_gain
+    return gain
+
+
+def build_preset_json(profile_data, driver_size_mm: int = 50):
+    """Builds a complete EasyEffects output preset dictionary with physical safety clamping."""
     bands_dict = {}
     for idx, band in enumerate(profile_data["bands"]):
         band_key = f"band{idx}"
         b_type = band.get("type", "Bell")
-        if b_type == "Low-shelf":
-            mode = "RLC (BT)"
-        elif b_type == "High-shelf":
-            mode = "RLC (BT)"
-        else:
-            mode = "RLC (BT)"
+        freq = float(band["freq"])
+        raw_gain = float(band["gain"])
+        safe_gain = clamp_gain_to_safe_limits(freq, raw_gain, driver_size_mm)
+        mode = "RLC (BT)"
 
         bands_dict[band_key] = {
-            "frequency": float(band["freq"]),
-            "gain": float(band["gain"]),
+            "frequency": freq,
+            "gain": safe_gain,
             "mode": mode,
             "mute": False,
             "q": float(band.get("q", 1.4)),

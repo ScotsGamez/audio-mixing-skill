@@ -68,3 +68,27 @@ When calibrating speakers (e.g. 3", 5", or 8" woofers on a desk or stands):
    - Clean extension down to 45–55 Hz (5") or 35–42 Hz (8").
    - Room Boundary Effect: Placing speakers close to a wall boosts bass by +3 dB; placing them in a corner boosts bass by +6 dB to +9 dB (quarter-space boundary loading).
    - Correct Tuning: If desk/wall loaded, apply a low-shelf cut (-2 to -4 dB below 120 Hz) to eliminate muddy acoustic boom.
+
+---
+
+## 4. Maximum Safe Gain Ceilings Matrix (Speaker Size, Quality & Rating)
+
+Transducer excursion scales inversely with the square of frequency ($X \propto \frac{1}{f^2}$).
+To produce sound at 32 Hz requires **4 times the physical mechanical cone stroke** of 64 Hz for the exact same acoustic output.
+When sub-bass is boosted beyond physical limits, voice coils exceed their linear magnetic gap ($X_{\max}$), causing acoustic **blaring, harmonic breakup, and earcup turbulence**.
+
+### The Universal Safe Gain Ceiling Matrix:
+
+| Transducer Type & Size | Rating / Architecture | Max Safe 20–35 Hz | Max Safe 40–80 Hz | Max Safe 100–250 Hz | Max Safe 3–5 kHz | Acoustic Failure Mode if Exceeded |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **<40mm Dynamic (IEMs)** | Standard / Dual-BA | **+3.5 dB** | **+5.0 dB** | +2.5 dB | +5.0 dB | Diaphragm bottoming out, harsh buzz |
+| **40mm Dynamic** | Studio / Consumer | **+5.5 dB** | **+6.5 dB** | +2.0 dB | +6.0 dB | Cone distortion, compressed vocal mids |
+| **50mm Dynamic** (Single Chamber) | Gaming / Studio | **+7.0 dB** | **+7.5 dB** | +1.5 dB | +6.5 dB | Acoustic air pressure blare, cup rattle |
+| **50mm Dual-Chamber** (Cloud Alpha S) | Audiophile Grade | **+8.0 dB MAX** | **+7.5 dB MAX** | **Cut Only (-3dB)** | **+7.0 dB MAX** | **Exceeding +8.0 dB at 31–35 Hz causes acoustic blaring** |
+| **Planar Magnetic** | High-End Audiophile | **+9.5 dB** | **+8.5 dB** | +2.5 dB | +5.5 dB | High current draw; very safe mechanically |
+| **3" - 4" Desktop Woofers** | Compact Desktop | **0.0 dB (Cut Only)** | **+2.5 dB (80Hz+)**| 0.0 dB | +4.0 dB | Thermal voice coil failure, port wheezing |
+| **5" - 6" Studio Monitors** | Nearfield Pro | **+2.0 dB (50Hz+)**| **+3.5 dB** | +1.5 dB | +3.0 dB | Port turbulence, low-end boom |
+| **8" Studio Monitors** | Midfield Pro | **+3.5 dB (35Hz+)**| **+4.0 dB** | +2.0 dB | +3.0 dB | Room standing wave overload |
+
+> **Hard Safety Rule**: The AI must **never exceed +8.0 dB in the 20–35 Hz range on 50mm dynamic drivers** (such as Cloud Alpha S). Any requested sub-bass boost must be clamped to +8.0 dB max to prevent blaring and protect the transducer.
+

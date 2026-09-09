@@ -24,6 +24,7 @@ you define here take the highest priority over all other references and default 
 6. **No Heavy Harmonic Excitation on Full Mix**: Keep the signal path clean (`equalizer + maximizer`) to preserve pristine vocal clarity without artificial saturation mud.
 7. **Maintain Upper Presence**: Ensure 4 kHz (+6 dB) and 8 kHz (+3 dB) are preserved so heavy sub-bass never veils vocals or instruments.
 8. **In-Place Preset Updates Only (No Preset Sprawl)**: When adjusting or fine-tuning sound profiles, NEVER create a new uniquely-named preset file. Always update and overwrite the single active custom preset (`Cloud Alpha S - Clean Bass & Crystal Clarity.json`) in-place. The user's EasyEffects directory must only contain this active preset and the default program presets.
+9. **Maximum Safe Gain Ceilings (Anti-Blare Rule)**: On the HyperX Cloud Alpha S (50mm dual-chamber drivers), never boost the 20–35 Hz sub-bass band beyond **+8.0 dB**. Any positive gain above +8.0 dB causes mechanical voice-coil distortion and acoustic blaring in the earcups. Always clamp 31–35 Hz to $\le +8.0 \text{ dB}$ (optimal tuned baseline: +7.5 to +7.8 dB).
 
 ---
 

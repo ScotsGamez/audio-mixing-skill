@@ -70,6 +70,13 @@ Refer to [hardware_profiles.md](./references/hardware_profiles.md) for full phys
 | **Small Speakers (3" - 4" woofers)** | Physically unable to reproduce <60Hz cleanly; port resonance often peaks around 80-100Hz. | Steep high-pass at 55Hz (protect woofer); slight dip at box resonance (100–160Hz); gentle mid boost for vocal projection. |
 | **Medium Monitors (5" - 8" woofers)** | Good extension down to 40-48Hz; vulnerable to room boundary bass loading (+3dB to +6dB near walls). | Compensate for boundary proximity (low-shelf cut at 100Hz if against a wall); tame flutter echoes around 2–4kHz. |
 
+### Mandatory Safe Gain Ceiling Limits (Anti-Blare Protection):
+Never exceed these physical positive gain thresholds during EQ tuning:
+- **50mm Dual-Chamber (Cloud Alpha S)**: Sub-Bass (20–35 Hz) clamped to **$\le +8.0$ dB MAX**. Punch (40–80 Hz) clamped to **$\le +7.5$ dB MAX**. Exceeding +8.0 dB at 32 Hz causes driver voice-coil saturation and earcup blaring!
+- **40mm Dynamic**: 20–35 Hz clamped to **$\le +5.5$ dB MAX**.
+- **Planar Magnetic**: Sub-Bass clamped to **$\le +9.5$ dB MAX**.
+- **3"–4" Desktop Speakers**: Sub-bass boost **FORBIDDEN (0 dB / Cut only)**; high-pass mandatory at 55 Hz.
+
 ---
 
 ## 3. Mastering & Audiophile Principles ("The Masters")
