@@ -25,10 +25,11 @@ you define here take the highest priority over all other references and default 
 7. **Maintain Upper Presence**: Ensure 4 kHz (+6 dB) and 8 kHz (+3 dB) are preserved so heavy sub-bass never veils vocals or instruments.
 8. **In-Place Preset Updates Only (No Preset Sprawl)**: When adjusting or fine-tuning sound profiles, NEVER create unnecessary extra preset files. Keep the single active custom preset (`Cloud Alpha S - Kinetic Bass & Crystal Air.json`) updated in-place so the user's EasyEffects directory only contains this active preset and the default program presets.
 9. **Maximum Safe Gain Ceilings (Anti-Blare Rule)**: On the HyperX Cloud Alpha S (50mm dual-chamber drivers), never boost the 20–35 Hz sub-bass band beyond **+8.0 dB**. Any positive gain above +8.0 dB causes mechanical voice-coil distortion and acoustic blaring in the earcups. Always clamp 31–35 Hz to $\le +8.0 \text{ dB}$ (optimal tuned baseline: +7.5 to +7.8 dB).
+10. **Anti-CRT Whine & Tactile Bass Shake Protocol**: Never boost the 15.5–16 kHz band on the Cloud Alpha S. 15.734 kHz is the CRT television flyback frequency and produces piercing high-frequency ringing; apply a notch or gentle cut at 15.7 kHz. For tactile bass "shake" without driver blare, concentrate energy into the 50–65 Hz visceral zone (+7.8 dB) rather than over-extending 30–35 Hz.
 
 ---
 
 ## 3. Manual Notes & Live Listening Log
 
 Add your own listening feedback here as you test different profiles:
-- *Example*: "Cloud Alpha sounds best with a -3.0 dB cut at 135 Hz and a +1.5 dB bump at 1.2 kHz for rock vocals."
+- *Cloud Alpha S Hardware Note*: Connected to Realtek ALC1200 on ASRock Z490M Pro4. Rear Green jack is passive Line-Out; Front Panel 3.5mm jack engages dedicated internal Headphone Op-Amp for significantly greater power delivery and bass driver displacement.
